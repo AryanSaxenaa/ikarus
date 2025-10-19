@@ -10,7 +10,6 @@ export default function InspectorPanel() {
   if (!selected) {
     return (
       <aside style={{ width: 220, padding: 12 }}>
-        <div style={{ color: "var(--muted)" }}>Select an element in the preview to edit</div>
       </aside>
     );
   }

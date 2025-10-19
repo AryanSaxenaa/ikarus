@@ -4,7 +4,7 @@ export const DEFAULT_CONFIG = {
   layout: "layoutA",
   typography: { family: "Inter, system-ui, sans-serif", weight: 500, size: 16 },
   button: { radius: 8, shadow: "small", align: "center", bg: "#2563eb", color: "#ffffff" },
-  gallery: { align: "grid-center", gap: 12, imgRadius: 8 },
+  gallery: { align: "bottom", gap: 12, imgRadius: 8 },
   layoutStyle: { cardRadius: 12, padding: 20, sectionBg: "#ffffff" },
   stroke: { color: "#e5e7eb", weight: 1 }
 };

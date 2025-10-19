@@ -83,6 +83,24 @@ export default function ConfigPanel() {
         <label>Radius</label>
         <input type="range" min="0" max="48" value={cfg.button.radius}
                onChange={(e) => setPatch("button", { radius: Number(e.target.value) })} />
+        <span>{cfg.button.radius}px</span>
+      </div>
+      <div>
+        <label>Shadow</label>
+        <select value={cfg.button.shadow} onChange={(e) => setPatch("button", { shadow: e.target.value })}>
+          <option value="none">None</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+      <div>
+        <label>Alignment</label>
+        <select value={cfg.button.align} onChange={(e) => setPatch("button", { align: e.target.value })}>
+          <option value="left">Left</option>
+          <option value="center">Center</option>
+          <option value="right">Right</option>
+        </select>
       </div>
       <div>
         <label>Background</label>
@@ -94,16 +112,59 @@ export default function ConfigPanel() {
       </div>
 
       <hr />
-      <h4>Layout style</h4>
+      <h4>Gallery/Images</h4>
       <div>
-        <label>Card corner radius</label>
+        <label>Gallery Alignment</label>
+        <select value={cfg.gallery.align} onChange={(e) => setPatch("gallery", { align: e.target.value })}>
+          <option value="top">Top</option>
+          <option value="bottom">Bottom</option>
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+        </select>
+      </div>
+      <div>
+        <label>Image Spacing</label>
+        <input type="range" min="0" max="40" value={cfg.gallery.gap}
+               onChange={(e) => setPatch("gallery", { gap: Number(e.target.value) })} />
+        <span>{cfg.gallery.gap}px</span>
+      </div>
+      <div>
+        <label>Image Border Radius</label>
+        <input type="range" min="0" max="30" value={cfg.gallery.imgRadius}
+               onChange={(e) => setPatch("gallery", { imgRadius: Number(e.target.value) })} />
+        <span>{cfg.gallery.imgRadius}px</span>
+      </div>
+
+      <hr />
+      <h4>Layout Style</h4>
+      <div>
+        <label>Card Corner Radius</label>
         <input type="number" min="0" value={cfg.layoutStyle.cardRadius}
                onChange={(e) => setPatch("layoutStyle", { cardRadius: Number(e.target.value) })} />
       </div>
       <div>
-        <label>Padding</label>
+        <label>Container Padding</label>
         <input type="number" min="0" value={cfg.layoutStyle.padding}
                onChange={(e) => setPatch("layoutStyle", { padding: Number(e.target.value) })} />
+      </div>
+      <div>
+        <label>Section Background Color</label>
+        <input type="color" value={cfg.layoutStyle.sectionBg} 
+               onChange={(e) => setPatch("layoutStyle", { sectionBg: e.target.value })} />
+      </div>
+
+      <hr />
+      <h4>Stroke/Border</h4>
+      <div>
+        <label>Stroke Color</label>
+        <input type="color" value={cfg.stroke.color} 
+               onChange={(e) => setPatch("stroke", { color: e.target.value })} />
+      </div>
+      <div>
+        <label>Stroke Weight</label>
+        <input type="range" min="0" max="10" value={cfg.stroke.weight}
+               onChange={(e) => setPatch("stroke", { weight: Number(e.target.value) })} />
+        <span>{cfg.stroke.weight}px</span>
       </div>
 
       <hr />
